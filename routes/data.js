@@ -13,7 +13,8 @@ router.get('/', function(req, res, next) {
   if(keywords){
     // return those with keywords
     res.json( db.get('data').filter(o => {
-      return o['keywords'].includes(keywords);
+      o['keywords'] = o['keywords'].toUpperCase();
+      return o['keywords'].includes(keywords.toUpperCase());
     }).value());
   }else{
     // return all
