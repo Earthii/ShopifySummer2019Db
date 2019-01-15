@@ -7,7 +7,7 @@ var data = require('./routes/data');
 
 var app = express();
 
-app.use(cors({ origin: ['http://localhost:4200'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:4200', 'https://earthii.github.io'], credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
